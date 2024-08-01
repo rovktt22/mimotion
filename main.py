@@ -83,7 +83,7 @@ def getBeijinTime():
     else:
         print("获取北京时间失败")
         return
-    if min_1 != 1 and max_1 != 1:
+    if min_1 != 0 and max_1 != 0:
         user_mi = sys.argv[1]
         # 登录密码
         passwd_mi = sys.argv[2]
@@ -213,7 +213,7 @@ def main(_user, _passwd, min_1, max_1):
 
     response = requests.post(url, data=data, headers=head).json()
     # print(response)
-    result = f"[{now}]\n账号：{user[:7]}****{user[7:]}\n修改步数（{step}）[" + response['message'] + "]\n"
+    result = f"[{now}]\n账号：{user[:3]}****{user[5:]}\n修改步数（{step}）[" + response['message'] + "]\n"
     print(result)
     return result
 
